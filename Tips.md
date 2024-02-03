@@ -8,9 +8,11 @@
 </div>
 ```
 ```
-input:focus + label {
+input:focus + label,
+input:not(:placeholder-shown) + label
+{
   ...
 }
 ```
-+: es el operador adyacente. Selecciona el elemento que es inmediatamente posterior al primer elemento en el árbol de DOM y que comparte el mismo padre.
-En resumen, input:focus + label seleccionará un elemento label que es directamente adyacente a un input que está enfocado. 
+input:focus + label, seleccionará un elemento label que es directamente adyacente a un input que está enfocado. 
+input:not(:placeholder-shown) + label, se aplicará si el placeholder no se está mostrando, es decir, el input no está vacío.
